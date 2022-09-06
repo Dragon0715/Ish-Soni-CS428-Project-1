@@ -55,14 +55,6 @@ public class AreaTime : MonoBehaviour
                     AMorPM = "AM";
                 }
 
-				// double tempF = float.Parse(webRequest.downloadHandler.text.Substring(startTemp+6, (endTemp-startTemp-6)));
-				// int easyTempF = Mathf.RoundToInt((float)tempF);
-                //Debug.Log ("integer temperature is " + easyTempF.ToString());
-                // int startConditions = webRequest.downloadHandler.text.IndexOf("main",0);
-                // int endConditions = webRequest.downloadHandler.text.IndexOf(",",startConditions);
-                //string conditions = webRequest.downloadHandler.text.Substring(startConditions+7, (endConditions-startConditions-8));
-                //Debug.Log(conditions);
-
                 timeTextObject.GetComponent<TextMeshPro>().text = hour.ToString() + ":" + minute.ToString() + " " + AMorPM;
             }
         }
