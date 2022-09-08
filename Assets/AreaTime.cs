@@ -46,7 +46,7 @@ public class AreaTime : MonoBehaviour
                 int hour = int.Parse(webRequest.downloadHandler.text.Substring(startHour + 6, endHour - startHour - 6));
                 int minute = int.Parse(webRequest.downloadHandler.text.Substring(startMin + 8, endMin - startMin - 8));
 
-                Debug.Log(":\nhour= " + hour + " min= " + minute);
+                //Debug.Log(":\nhour= " + hour + " min= " + minute);
 
                 if (hour > 12) {
                     hour = hour - 12;
