@@ -6,6 +6,7 @@ public class RotationChecker : MonoBehaviour
 {
     public GameObject cube;
     public GameObject fireLight;
+    public GameObject boatLight;
     double x;
     double z;
     Vector3 rotation;
@@ -15,6 +16,8 @@ public class RotationChecker : MonoBehaviour
     void Start()
     {
         rotation = transform.rotation.eulerAngles;
+        fireLight.GetComponent<Light>().enabled = true;
+        boatLight.GetComponent<Light>().enabled = false;
     }
 
     // Update is called once per frame
@@ -30,9 +33,11 @@ public class RotationChecker : MonoBehaviour
                 if (normalLight == true) {
                     normalLight = false;
                     fireLight.GetComponent<Light>().enabled = false;
+                    boatLight.GetComponent<Light>().enabled = true;
                 } else {
                     normalLight = true;
                     fireLight.GetComponent<Light>().enabled = true;
+                    boatLight.GetComponent<Light>().enabled = false;
                 }
             }
         }
