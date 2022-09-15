@@ -54,6 +54,9 @@ public class AreaTime : MonoBehaviour
                 } else {
                     AMorPM = "AM";
                 }
+                if (hour == 0) {
+                    hour = 12;
+                }
 
                 timeTextObject.GetComponent<TextMeshPro>().text = hour.ToString() + ":" + minute.ToString() + " " + AMorPM;
             }
