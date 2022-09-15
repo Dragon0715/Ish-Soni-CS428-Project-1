@@ -45,8 +45,9 @@ public class AreaTime : MonoBehaviour
             	int endMin = webRequest.downloadHandler.text.IndexOf(",",startMin);
                 int hour = int.Parse(webRequest.downloadHandler.text.Substring(startHour + 6, endHour - startHour - 6));
                 int minute = int.Parse(webRequest.downloadHandler.text.Substring(startMin + 8, endMin - startMin - 8));
+                string minute0 = "";
 
-                //Debug.Log(":\nhour= " + hour + " min= " + minute);
+                Debug.Log(":\nhour= " + hour + " min= " + minute);
 
                 if (hour > 12) {
                     hour = hour - 12;
@@ -57,8 +58,10 @@ public class AreaTime : MonoBehaviour
                 if (hour == 0) {
                     hour = 12;
                 }
-
-                timeTextObject.GetComponent<TextMeshPro>().text = hour.ToString() + ":" + minute.ToString() + " " + AMorPM;
+                if (minute < 10) {
+                    minute0 = "0"; //API gives min as a single digit if min < 10, so this will add the 0 EX: 8 --> 08
+                } 
+                timeTextObject.GetComponent<TextMeshPro>().text = hour.ToString() + ":" + minute0 + minute.ToString() + " " + AMorPM;
             }
         }
     }
